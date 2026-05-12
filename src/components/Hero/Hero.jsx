@@ -26,6 +26,7 @@ const sections = [
     cardTitle: "Motion",
   },
 ];
+// test comment
 
 const contentVariants = {
   enter: { opacity: 0, y: 42, filter: "blur(12px)" },
