@@ -1,0 +1,25 @@
+.hero {
+    padding: 50px 20px;
+ 
+}
+.heroContent {
+    max-width: 600px;
+}
+.hero h1 {
+    color: #fff;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+.hero p {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+
+.imgFluid {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+

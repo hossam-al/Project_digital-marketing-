@@ -1,5 +1,32 @@
-body {
+@font-face {
+  font-family: "DM Sans";
+  src: url("/DM_Sans/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/DM_Sans/DMSans-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+* {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #fff #000000;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: #0d2b55;
 }

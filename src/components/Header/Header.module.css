@@ -1,7 +1,22 @@
-.header {
-  background-color: #9c8cd4;
+.transparent-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  background: transparent;
+  backdrop-filter: none;
+  transition: all 0.3s ease;
   padding: 20px 0;
 }
+
+.transparent-header.scrolled {
+  background: rgba(0, 0, 0, 0.055);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .headerContent {
   display: flex;
   justify-content: space-between;
@@ -23,7 +38,7 @@
   transition: all 0.3s ease;
 }
 .item ul li:hover {
-  color: #9c8cd4;
+  color: #f47920;
   transition: all 0.3s ease;
 }
 
@@ -43,7 +58,7 @@
 }
 .getStarted {
   background-color: #fff;
-  color: #9c8cd4;
+  color: #f47920;
   padding: 10px 20px;
   border-radius: 30px;
   cursor: pointer;
@@ -52,7 +67,7 @@
 }
 
 .getStarted:hover {
-  background-color: #9c8cd4;
+  background-color: #f47920;
   color: #fff;
   transition: all 0.3s ease;
 }
@@ -66,7 +81,7 @@
   transition: all 0.3s ease;
 }
 .language:hover {
-  color: #9c8cd4;
+  color: #f47920;
   transition: all 0.3s ease;
 }
 
@@ -84,7 +99,7 @@
 }
 .hamburger:hover {
   background-color: #fff;
-  color: #9c8cd4;
+  color: #f47920;
 }
 
 .mobileMenu {

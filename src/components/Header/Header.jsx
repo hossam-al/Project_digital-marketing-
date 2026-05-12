@@ -1,13 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import style from "./Header.module.css";
 import MobileMenu from "./MobileMenu";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuItems = ["Home", "About", "Contact", "Services", "Blog"];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className={style.header}>
+    <header
+      className={`${style["transparent-header"]} ${
+        isScrolled ? style.scrolled : ""
+      }`}
+    >
       <div className="container">
         <div className={style.headerContent}>
           <div className={style.icon}>
