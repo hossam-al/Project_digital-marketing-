@@ -27,10 +27,7 @@ function Header() {
       <div className="container">
         <div className={style.headerContent}>
           <div className={style.icon}>
-            <img
-              src="https://aeromarketingsa.com/wp-content/uploads/aeroma/assets/logo.webp"
-              alt="icon"
-            />
+            <img src="/The Ego Studio Final-15@1x.png" alt="icon" />
           </div>
           <div className={style.item}>
             <ul>
@@ -44,7 +41,6 @@ function Header() {
               type="button"
               aria-label="Language"
               className={style.language}
-            
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +58,7 @@ function Header() {
                 <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
                 <path d="M2 12h20"></path>
               </svg>
-              
+
               {"العربية"}
             </button>
             <button

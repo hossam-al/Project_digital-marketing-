@@ -1,25 +1,442 @@
-.hero {
-    padding: 50px 20px;
- 
-}
-.heroContent {
-    max-width: 600px;
-}
-.hero h1 {
-    color: #fff;
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-.hero p {
-    color: #fff;
-    font-size: 18px;
-    margin-bottom: 30px;
+.storyWrapper {
+  position: relative;
+  height: 340vh;
+  background:
+    radial-gradient(circle at 78% 24%, rgba(244, 121, 32, 0.18), transparent 30%),
+    linear-gradient(180deg, #0d2b55 0%, #08213f 46%, #0d2b55 100%);
 }
 
+.stickyHero {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 118px 0 70px;
+  color: #fff;
+  isolation: isolate;
+}
 
-.imgFluid {
-  max-width: 100%;
+.ambient {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(13, 43, 85, 0.92), rgba(13, 43, 85, 0.54) 50%, rgba(26, 74, 138, 0.86)),
+    radial-gradient(circle at 72% 52%, rgba(255, 160, 64, 0.34), transparent 20%),
+    radial-gradient(circle at 76% 56%, rgba(184, 205, 232, 0.26), transparent 34%);
+}
+
+.ambient::before,
+.ambient::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(2px);
+  opacity: 0.72;
+}
+
+.ambient::before {
+  right: 8%;
+  top: 16%;
+  width: 360px;
+  height: 360px;
+  background: rgba(244, 121, 32, 0.2);
+}
+
+.ambient::after {
+  right: 18%;
+  bottom: 10%;
+  width: 520px;
+  height: 520px;
+  background: rgba(184, 205, 232, 0.1);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(360px, 1.1fr);
+  align-items: center;
+  gap: clamp(44px, 7vw, 112px);
+}
+
+.leftPanel {
+  position: relative;
+  min-height: 530px;
+  display: flex;
+  align-items: center;
+}
+
+.progressTrack {
+  position: absolute;
+  left: 0;
+  top: 20px;
+  width: min(100%, 420px);
+  height: 3px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(184, 205, 232, 0.22);
+}
+
+.progressTrack span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #f47920, #ffa040);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.copyBlock {
+  width: 100%;
+  max-width: 610px;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  margin-bottom: 18px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 160, 64, 0.32);
+  border-radius: 999px;
+  color: #ffa040;
+  background: rgba(255, 160, 64, 0.1);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.copyBlock h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(46px, 6vw, 86px);
+  font-weight: 900;
+  line-height: 0.96;
+}
+
+.copyBlock p {
+  max-width: 540px;
+  margin: 24px 0 0;
+  color: #b8cde8;
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.75;
+}
+
+.copyBlock ul {
+  display: grid;
+  gap: 12px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.copyBlock li {
+  position: relative;
+  padding-left: 30px;
+  color: #f4f7fc;
+  font-weight: 700;
+}
+
+.copyBlock li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #f47920;
+  box-shadow: 0 0 0 6px rgba(244, 121, 32, 0.16);
+}
+
+.visualPanel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.visualPanel::before {
+  content: "";
+  position: absolute;
+  inset: 8% 6% 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 160, 64, 0.32), transparent 62%);
+  filter: blur(12px);
+}
+
+.glassCard {
+  position: relative;
+  width: min(100%, 520px);
+  min-height: 590px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.06)),
+    rgba(13, 43, 85, 0.58);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(20px);
+}
+
+.glassCard::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 27px;
+  background:
+    radial-gradient(circle at 22% 16%, rgba(255, 255, 255, 0.28), transparent 24%),
+    radial-gradient(circle at 78% 48%, rgba(244, 121, 32, 0.28), transparent 28%);
+  pointer-events: none;
+}
+
+.cardHeader {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 30px 0;
+}
+
+.cardHeader span {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  color: #0d2b55;
+  background: #ffa040;
+  font-weight: 900;
+}
+
+.cardHeader strong {
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.mascotFrame {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 468px;
+  padding: 34px 22px 0;
+}
+
+.mascotFrame::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  width: 76%;
+  height: 30%;
+  border-radius: 50%;
+  background: rgba(13, 43, 85, 0.42);
+  filter: blur(18px);
+  transform: translateX(-50%);
+}
+
+.mascotFrame img {
+  position: relative;
+  z-index: 2;
+  width: min(88%, 390px);
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
+  filter: drop-shadow(0 34px 42px rgba(0, 0, 0, 0.28));
+  will-change: transform;
 }
 
+.cardFooter {
+  position: relative;
+  z-index: 2;
+  height: 8px;
+  margin: 0 30px 30px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(184, 205, 232, 0.22);
+}
+
+.cardFooter span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #f47920, #ffa040);
+  transition: width 0.5s ease;
+}
+
+@media (max-width: 991px) {
+  .storyWrapper {
+    height: 260vh;
+  }
+
+  .stickyHero {
+    position: sticky;
+    height: 100svh;
+    min-height: 680px;
+    align-items: center;
+    overflow: hidden;
+    padding: 94px 0 28px;
+  }
+
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    height: 100%;
+    align-content: center;
+  }
+
+  .leftPanel {
+    display: block;
+    min-height: 0;
+    order: 1;
+  }
+
+  .visualPanel {
+    order: 2;
+  }
+
+  .visualPanel::before {
+    inset: -22% 12% 0;
+  }
+
+  .mascotFrame {
+    min-height: 236px;
+    padding: 8px 18px 0;
+  }
+
+  .mascotFrame img {
+    width: min(58%, 250px);
+  }
+
+  .copyBlock {
+    max-width: 680px;
+  }
+
+  .copyBlock h1 {
+    max-width: 720px;
+    font-size: clamp(38px, 7.6vw, 60px);
+    line-height: 1;
+  }
+
+  .copyBlock p {
+    max-width: 620px;
+    margin-top: 16px;
+    line-height: 1.55;
+  }
+
+  .copyBlock ul {
+    gap: 9px;
+    margin-top: 18px;
+  }
+
+  .progressTrack {
+    position: relative;
+    top: auto;
+    width: 100%;
+    margin-bottom: 18px;
+  }
+
+  .glassCard {
+    width: min(100%, 520px);
+    min-height: 330px;
+    margin: 0 auto;
+    border-radius: 22px;
+  }
+
+  .cardHeader {
+    padding: 18px 20px 0;
+  }
+
+  .cardHeader span {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+  }
+
+  .cardFooter {
+    height: 7px;
+    margin: 0 20px 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .stickyHero {
+    min-height: 620px;
+    padding: 86px 0 20px;
+  }
+
+  .heroGrid {
+    gap: 40px;
+  }
+
+  .copyBlock h1 {
+    font-size: clamp(31px, 10.2vw, 39px);
+    line-height: 1;
+  }
+
+  .copyBlock p {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .copyBlock ul {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .copyBlock li {
+    padding-left: 26px;
+    font-size: 14px;
+  }
+
+  .cardHeader {
+    padding: 16px 18px 0;
+  }
+
+  .cardHeader span {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+  }
+
+  .cardHeader strong {
+    font-size: 13px;
+  }
+
+  .glassCard {
+    min-height: 264px;
+    border-radius: 18px;
+  }
+
+  .mascotFrame {
+    min-height: 188px;
+    padding-top: 4px;
+  }
+
+  .mascotFrame img {
+    width: min(60%, 200px);
+  }
+
+  .cardFooter {
+    height: 7px;
+  }
+}
+
+@media (max-width: 380px) {
+  .copyBlock h1 {
+    font-size: 30px;
+  }
+
+  .glassCard {
+    min-height: 242px;
+  }
+
+  .mascotFrame {
+    min-height: 168px;
+  }
+}
