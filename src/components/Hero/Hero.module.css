@@ -4,6 +4,7 @@
   background:
     radial-gradient(circle at 78% 24%, rgba(244, 121, 32, 0.18), transparent 30%),
     linear-gradient(180deg, #0d2b55 0%, #08213f 46%, #0d2b55 100%);
+    padding: 85px 0px;
 }
 
 .stickyHero {
@@ -16,6 +17,7 @@
   padding: 118px 0 70px;
   color: #fff;
   isolation: isolate;
+
 }
 
 .ambient {
@@ -110,7 +112,7 @@
 .copyBlock h1 {
   margin: 0;
   color: #fff;
-  font-size: clamp(46px, 6vw, 86px);
+  font-size: clamp(46px, 6vw, 70px);
   font-weight: 900;
   line-height: 0.96;
 }

@@ -1,0 +1,531 @@
+/* ═══════════════════════════════════════════════════════
+   About.module.css — Blue / Orange Futuristic Theme
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Tokens ─────────────────────────────────────────── */
+.section {
+  --clr-bg: #0d2b55;
+
+  --clr-surface: rgba(255, 255, 255, 0.06);
+  --clr-surface-hover: rgba(255, 255, 255, 0.1);
+
+  --clr-border: rgba(184, 205, 232, 0.18);
+  --clr-border-hover: rgba(255, 160, 64, 0.35);
+
+  --clr-white: #ffffff;
+
+  --clr-muted: #b8cde8;
+  --clr-faint: rgba(184, 205, 232, 0.55);
+
+  /* Orange + Blue Theme */
+  --clr-accent-a: #f47920;
+  --clr-accent-b: #ffa040;
+  --clr-accent-c: #1a4a8a;
+
+  --grad-accent: linear-gradient(
+    135deg,
+    #f47920 0%,
+    #ffa040 45%,
+    #b8cde8 100%
+  );
+
+  --grad-card:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.14) 0%,
+      rgba(255,255,255,0.04) 100%
+    );
+
+  --shadow-card: 0 10px 45px rgba(0, 0, 0, 0.45);
+
+  --shadow-glow: 0 0 60px rgba(244, 121, 32, 0.16);
+
+  --radius-card: 20px;
+  --radius-chip: 12px;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', 'Segoe UI', sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 78% 24%,
+      rgba(244, 121, 32, 0.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #0d2b55 0%,
+      #08213f 46%,
+      #0d2b55 100%
+    );
+
+  padding: 120px 0 100px;
+
+  font-family: var(--font-body);
+}
+
+/* ── Ambient background ─────────────────────────────── */
+.ambientOrb1,
+.ambientOrb2 {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: orbDrift 14s ease-in-out infinite alternate;
+}
+
+.ambientOrb1 {
+  width: 700px;
+  height: 700px;
+  top: -200px;
+  right: -180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(244, 121, 32, 0.14) 0%,
+      transparent 70%
+    );
+}
+
+.ambientOrb2 {
+  width: 500px;
+  height: 500px;
+  bottom: -100px;
+  left: -120px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(184, 205, 232, 0.12) 0%,
+      transparent 70%
+    );
+
+  animation-duration: 18s;
+  animation-delay: -6s;
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(184,205,232,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184,205,232,0.03) 1px, transparent 1px);
+
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* ── Label row ──────────────────────────────────────── */
+.labelRow {
+  margin-bottom: 52px;
+  animation: fadeSlideUp 0.8s var(--ease-out-expo) both;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: #ffa040;
+
+  background: rgba(255, 160, 64, 0.1);
+
+  border: 1px solid rgba(255, 160, 64, 0.24);
+
+  padding: 6px 16px 6px 12px;
+
+  border-radius: 999px;
+}
+
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+  background: #ffa040;
+
+  box-shadow: 0 0 8px #ffa040;
+
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ── Copy block ─────────────────────────────────────── */
+.copyBlock {
+  animation: fadeSlideUp 0.9s var(--ease-out-expo) 0.1s both;
+}
+
+.headline {
+  font-family: var(--font-display);
+
+  font-size: clamp(2.6rem, 5vw, 4rem);
+
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  color: var(--clr-white);
+
+  margin-bottom: 24px;
+
+  letter-spacing: -0.01em;
+}
+
+.accentItalic {
+  font-style: italic;
+
+  background: var(--grad-accent);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+.lead {
+  font-size: 1.1rem;
+
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  margin-bottom: 18px;
+
+  font-weight: 300;
+}
+
+.body {
+  font-size: 0.95rem;
+
+  line-height: 1.75;
+
+  color: var(--clr-muted);
+
+  margin-bottom: 0;
+}
+
+/* ── Pillar chips ───────────────────────────────────── */
+.pillarsRow {
+  margin-top: 32px;
+}
+
+.pillarChip {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  background: var(--clr-surface);
+
+  border: 1px solid var(--clr-border);
+
+  border-radius: var(--radius-chip);
+
+  padding: 14px 18px;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+
+  cursor: default;
+
+  flex: 0 0 auto;
+
+  backdrop-filter: blur(12px);
+}
+
+.pillarChip:hover {
+  background: var(--clr-surface-hover);
+
+  border-color: var(--clr-border-hover);
+
+  transform: translateY(-2px);
+}
+
+.pillarTitle {
+  font-size: 0.8rem;
+
+  font-weight: 500;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+  background: var(--grad-accent);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+.pillarDesc {
+  font-size: 0.78rem;
+
+  color: var(--clr-muted);
+
+  max-width: 160px;
+}
+
+/* ── CTA row ────────────────────────────────────────── */
+.ctaRow {
+  margin-top: 40px;
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  background: var(--grad-accent);
+
+  color: #0d2b55;
+
+  font-family: var(--font-body);
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  padding: 14px 28px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  box-shadow: 0 0 30px rgba(244, 121, 32, 0.25);
+}
+
+.ctaPrimary:hover {
+  opacity: 0.92;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 40px rgba(244, 121, 32, 0.4);
+}
+
+.ctaGhost {
+  font-size: 0.88rem;
+
+  color: var(--clr-faint);
+
+  text-decoration: none;
+
+  letter-spacing: 0.03em;
+
+  transition: color 0.25s ease;
+
+  border-bottom: 1px solid transparent;
+
+  padding-bottom: 2px;
+}
+
+.ctaGhost:hover {
+  color: var(--clr-white);
+
+  border-bottom-color: rgba(255,255,255,0.3);
+}
+
+/* ── Image frame ────────────────────────────────────── */
+.imageFrame {
+  position: relative;
+
+  border-radius: 24px;
+
+  animation: fadeSlideUp 1s var(--ease-out-expo) 0.2s both;
+}
+
+.imageGlow {
+  position: absolute;
+
+  inset: -1px;
+
+  border-radius: 26px;
+
+  background: var(--grad-accent);
+
+  opacity: 0.18;
+
+  filter: blur(20px);
+
+  z-index: 0;
+
+  transition: opacity 0.4s ease;
+}
+
+.imageFrame:hover .imageGlow {
+  opacity: 0.34;
+}
+
+.imageBorder {
+  position: absolute;
+
+  inset: -1px;
+
+  border-radius: 25px;
+
+  background: var(--grad-accent);
+
+  z-index: 0;
+
+  opacity: 0.4;
+
+  padding: 1px;
+}
+
+.heroImage {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+
+  height: 480px;
+
+  object-fit: cover;
+
+  border-radius: 24px;
+
+  display: block;
+
+  transition: transform 0.6s var(--ease-out-expo);
+
+  filter: brightness(0.9) saturate(1.1);
+}
+
+/* ── Metrics ────────────────────────────────────────── */
+.metricCard {
+  position: relative;
+
+  overflow: hidden;
+
+  background: var(--grad-card);
+
+  border: 1px solid var(--clr-border);
+
+  border-radius: var(--radius-card);
+
+  padding: 32px 24px;
+
+  text-align: center;
+
+  transition:
+    transform 0.35s var(--ease-out-expo),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+
+  backdrop-filter: blur(14px);
+}
+
+.metricCard:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(255, 160, 64, 0.35);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.4),
+    0 0 30px rgba(244, 121, 32, 0.12);
+}
+
+.metricValue {
+  font-family: var(--font-display);
+
+  font-size: clamp(2rem, 4vw, 2.8rem);
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  margin-bottom: 10px;
+
+  background: var(--grad-accent);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+.metricLabel {
+  font-size: 0.78rem;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  color: var(--clr-muted);
+}
+.metricIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.7rem;
+
+  color: #ffa040;
+
+  margin-bottom: 14px;
+
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease;
+}
+
+.metricCard:hover .metricIcon {
+  transform: scale(1.15) rotate(-4deg);
+
+  color: #ffffff;
+}
+/* ── Keyframes ──────────────────────────────────────── */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes orbDrift {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(30px, 40px) scale(1.08);
+  }
+}
+
+@keyframes pulse {
+  0%,100% {
+    opacity: 1;
+    box-shadow: 0 0 8px #ffa040;
+  }
+
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 16px #ffa040;
+  }
+}
