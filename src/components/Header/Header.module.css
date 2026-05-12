@@ -1,0 +1,142 @@
+.header {
+  background-color: #9c8cd4;
+  padding: 20px 0;
+}
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+.item ul {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.item ul li {
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.item ul li:hover {
+  color: #9c8cd4;
+  transition: all 0.3s ease;
+}
+
+.icon img {
+  width: 50px;
+}
+
+.Action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.Action button {
+  border: 0;
+  font: inherit;
+}
+.getStarted {
+  background-color: #fff;
+  color: #9c8cd4;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  transition: all 0.3s ease;
+}
+
+.getStarted:hover {
+  background-color: #9c8cd4;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.language {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.language:hover {
+  color: #9c8cd4;
+  transition: all 0.3s ease;
+}
+
+.hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.hamburger:hover {
+  background-color: #fff;
+  color: #9c8cd4;
+}
+
+.mobileMenu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-8px);
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    transform 0.35s ease;
+  visibility: hidden;
+}
+.mobileMenu ul {
+  margin: 16px 0 0;
+  padding: 12px 0;
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+}
+.mobileMenu li {
+  color: #fff;
+  padding: 12px 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.mobileMenu li:hover {
+  color: #f1ebff;
+  padding-left: 12px;
+}
+
+@media (max-width: 768px) {
+  .item ul {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .showMenu {
+    max-height: 220px;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+@media (max-width: 420px) {
+  .getStarted,
+  .language,
+  .item ul {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
